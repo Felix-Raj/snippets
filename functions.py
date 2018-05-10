@@ -1,6 +1,6 @@
 if __name__ == '__main__':
     print('PASSING VALUE TO A FUNCTION, PROVIDED THE ARGUMENT NAME IS STORED IN A VARIABLE')
-    
+
     def one(**kwargs):
         print(kwargs)
 

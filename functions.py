@@ -51,6 +51,7 @@ def use_of_underscore():
     # used in translations
     # see https://docs.python.org/3/library/gettext.html
     # seperate digits of numbers
+    # see https://www.python.org/dev/peps/pep-0515/
 
 
 if __name__ == '__main__':

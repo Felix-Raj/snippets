@@ -4,23 +4,24 @@ def use_of_underscore():
     source : https://hackernoon.com/understanding-the-underscore-of-python-309d1a029edc
     """
 
-    def _print_x_y(): # single leading inderscore - private
+    def _print_x_y():  # single leading inderscore - private
         print('x and y : {x}, {y}'.format(x=x, y=y))
+
     # ignore value when unpacking
-    x, _, y = (1,2,3)
+    x, _, y = (1, 2, 3)
     _print_x_y()
 
     # ignore multiple values, "Extended upacking not
     # available in < 3.x
-    x, *_, y = (1,2,3,4,5,5,6,7)
+    x, *_, y = (1, 2, 3, 4, 5, 5, 6, 7)
     _print_x_y()
 
     # ignore index
-    for _ in range(10): print('s', end=' ',sep=' ')
+    for _ in range(10): print('s', end=' ', sep=' ')
 
     print()
 
-    list_ =  [(1,2), (3,4)]
+    list_ = [(1, 2), (3, 4)]
     # single trailing underscore - avoiding conflict
     # with builtins names
 
@@ -83,14 +84,18 @@ def unpack_a_list(input_list: list) -> list:
     """
 
     output_list = list()
-    # for item in input_list:
-    #     if isinstance(item, list):
-    #         output_list.extend(item)
-    #     else:
-    #         output_list.append(item)
-    # return output_list
+    for item in input_list:
+        if isinstance(item, list):
+            output_list.extend(item)
+        else:
+            output_list.append(item)
+    return output_list
 
-    return [output_list.extend(item) if isinstance(item, list) else output_list.append(item) for item in input_list]
+    """
+    Its one liner
+    [output_list.extend(item) if isinstance(item, list) else output_list.append(item) for item in input_list]
+    return output_list
+    """
 
 # Eg
 print("Unpacked list of [1,2,[3,4],5] is {}".format(unpack_a_list([1, 2, [3, 4], 5])))

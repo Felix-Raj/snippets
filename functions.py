@@ -69,3 +69,27 @@ if __name__ == '__main__':
     one(**{a + '_with_modification': 'felix'})
 
     use_of_underscore()
+
+
+def unpack_a_list(input_list: list) -> list:
+    """
+    This function will receive a list which includes individual element and other lists
+    The Output will be a single list consisting of all the elements of nested list
+
+    Eg : Input -> [1, 2, 3, [4, 5], [6, 7]]
+        Output -> [1, 2, 3, 4, 5, 6, 7]
+    :param input_list:
+    :return: list
+    """
+
+    output_list = list()
+    for item in input_list:
+        if isinstance(item, list):
+            output_list += item
+        else:
+            output_list.append(item)
+    return output_list
+
+
+# Eg
+print("Unpacked list of [1,2,[3,4],5] is {}".format(unpack_a_list([1, 2, [3, 4], 5])))

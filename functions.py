@@ -97,5 +97,27 @@ def unpack_a_list(input_list: list) -> list:
     return output_list
     """
 
-# Eg
+
+# Example
 print("Unpacked list of [1,2,[3,4],5] is {}".format(unpack_a_list([1, 2, [3, 4], 5])))
+
+
+def find_min_max_in_list(input_list: list) -> tuple:
+    """
+    Find min and max number in list of numbers
+    Expect the list contains int only
+    :param input_list:
+    :return:
+    """
+    min = max = input_list[0]
+    for number in input_list:
+        if number > max:
+            max = number
+        if number < min:
+            min = number
+
+    return (max, min)
+
+
+# Example
+print("Max and min in [1,2,3,6,4,5] is {}".format(find_min_max_in_list([1, 2, 3, 6, 4, 5])))

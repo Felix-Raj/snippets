@@ -90,8 +90,7 @@ def unpack_a_list(input_list: list) -> list:
     #         output_list.append(item)
     # return output_list
 
-    return [ output_list.extend(item) if isinstance(item, list) else output_list.append(item) for item in input_list]
-
+    return [output_list.extend(item) if isinstance(item, list) else output_list.append(item) for item in input_list]
 
 # Eg
 print("Unpacked list of [1,2,[3,4],5] is {}".format(unpack_a_list([1, 2, [3, 4], 5])))

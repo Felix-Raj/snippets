@@ -83,12 +83,14 @@ def unpack_a_list(input_list: list) -> list:
     """
 
     output_list = list()
-    for item in input_list:
-        if isinstance(item, list):
-            output_list += item
-        else:
-            output_list.append(item)
-    return output_list
+    # for item in input_list:
+    #     if isinstance(item, list):
+    #         output_list.extend(item)
+    #     else:
+    #         output_list.append(item)
+    # return output_list
+
+    return [ output_list.extend(item) if isinstance(item, list) else output_list.append(item) for item in input_list]
 
 
 # Eg
